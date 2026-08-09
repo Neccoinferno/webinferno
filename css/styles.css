@@ -75,7 +75,7 @@ section img {
 }
 
 /* Títulos de las entradas */
-h2 {
+h1 {
     font-family:  'Cinzel', 'Garamond', 'Times New Roman', serif;
     font-size: 2.2em;
     letter-spacing: 1.5px;
@@ -96,7 +96,7 @@ h2 {
     transition: text-shadow 0.3s ease-in-out;
 }
 
-h2:hover {
+h1:hover {
     /*color: #80d8ff;*/
     color: var(--azul-electrico); 
     text-shadow: 
@@ -329,6 +329,10 @@ img {
 
 .entrada-reciente {
     flex: 1; /* Hace que la entrada ocupe todo el espacio sobrante dentro de los 1100px */
+}
+
+.entrada-reciente p {
+  margin-bottom: 1.5rem;
 }
 
 .indice-lateral {
@@ -839,7 +843,7 @@ body.habitacion-luz hr.neon {
    TÍTULOS H2 CENTRADOS Y RESTRINGIDOS AL TEXTO
    ====================================================== */
 
-body.habitacion-luz h2 {
+body.habitacion-luz h1 {
     color: blueviolet !important;
     text-shadow: none !important;
     
@@ -867,7 +871,7 @@ body.habitacion-luz article section {
 }
 
 /* Hover restringido exclusivamente al título romano */
-body.habitacion-luz h2:hover {
+body.habitacion-luz h1:hover {
     color: #4b0082 !important;
     background-color: #f3e8ff !important;
     border-color: rgba(138, 43, 226, 0.2) !important;
@@ -1292,23 +1296,38 @@ body {
 
 .encabezado-bienvenida {
   margin-bottom: 3rem;
+  text-align: center; /* O el que tengas definido */
 }
 
+/* Título principal */
 .encabezado-bienvenida h1 {
   font-size: 1.6rem;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.2rem;  /* Espacio respecto a la siguiente línea */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.encabezado-bienvenida p {
-  font-size: 1rem;
-  opacity: 0.7;
-  margin: 0;
+/* Segunda línea: "El infierno también es un lugar absurdo..." */
+.encabezado-bienvenida .linea-secundaria {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;  /* Espacio respecto a la llamada */
   font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Tercera línea: "Entra y descúbrelo." */
+.encabezado-bienvenida .linea-llamada {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* --- DISPOSICIÓN DE LAS PUERTAS --- */

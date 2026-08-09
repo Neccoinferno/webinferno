@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neccoinferno.github.io/webinferno/sitemap.xml
