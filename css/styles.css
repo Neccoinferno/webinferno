@@ -840,7 +840,7 @@ body.habitacion-luz hr.neon {
 }
 
 /* ======================================================
-   TÍTULOS H2 CENTRADOS Y RESTRINGIDOS AL TEXTO
+   TÍTULOS H1 CENTRADOS Y RESTRINGIDOS AL TEXTO
    ====================================================== */
 
 body.habitacion-luz h1 {
@@ -1490,4 +1490,202 @@ body {
     max-width: 90% !important; /* Asegura que nunca se coma los bordes */
     height: auto !important;
   }
+}
+
+/* ==========================================
+   AJUSTES PARA ANOCUS (BLOQUE DE COMENTARIOS)
+   ========================================== */
+
+/* Contenedor principal de Anocus - establece el ancho máximo */
+.anocus-root {
+  max-width: 600px; /* Ajusta este valor al ancho que quieras */
+  margin: 0 auto; /* Centra el bloque en la página */
+  box-sizing: border-box;
+}
+
+/* Asegura que todos los elementos internos respeten el ancho del contenedor */
+.anocus-root .anocus-list,
+.anocus-root .anocus-form,
+.anocus-root .anocus-comment {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Esto evita que el texto del comentario se desborde */
+.anocus-root .anocus-comment-body {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Estilos del bloque de comentarios para oscura.html */
+.anocus-oscura .anocus-root {
+    margin-top: 25px;
+}
+
+.anocus-oscura .anocus-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.anocus-oscura .anocus-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.anocus-oscura .anocus-row label {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    color: #e0e0e0;
+}
+
+.anocus-oscura .anocus-row input[type="text"],
+.anocus-oscura .anocus-row input[type="url"],
+.anocus-oscura .anocus-row textarea {
+    background-color: #0d0d12;
+    border: 1px solid var(--azul-electrico);
+    border-radius: 4px;
+    padding: 12px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1em;
+    outline: none;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.anocus-oscura .anocus-row input[type="text"]:focus,
+.anocus-oscura .anocus-row input[type="url"]:focus,
+.anocus-oscura .anocus-row textarea:focus {
+    border-color: #80d8ff;
+    box-shadow: 0 0 10px var(--azul-electrico);
+}
+
+.anocus-oscura .anocus-form button[type="submit"] {
+    background: transparent;
+    color: #F28383;
+    border: 1px solid var(--azul-electrico);
+    padding: 12px 24px;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    text-shadow: 0 0 5px var(--azul-electrico);
+    box-shadow: 0 0 5px var(--azul-electrico);
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.anocus-oscura .anocus-form button[type="submit"]:hover {
+    background-color: var(--azul-electrico);
+    color: #0d0d12;
+    box-shadow: 0 0 15px var(--azul-electrico);
+    text-shadow: none;
+}
+
+/* Estilos para la lista de comentarios en oscura.html */
+.anocus-oscura .anocus-list {
+    margin-top: 20px;
+}
+
+.anocus-oscura .anocus-comment {
+    background-color: #0d0d12;
+    border: 1px solid var(--azul-electrico);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.anocus-oscura .anocus-comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #80d8ff;
+}
+
+.anocus-oscura .anocus-author {
+    color: #F28383;
+}
+
+.anocus-oscura .anocus-time {
+    color: #888;
+    font-size: 0.8em;
+}
+
+.anocus-oscura .anocus-comment-body {
+    color: #e0e0e0;
+}
+
+.anocus-oscura .anocus-empty {
+    color: #888;
+    font-style: italic;
+}
+
+/* Estilos para el feedback de estado */
+.anocus-oscura .anocus-feedback {
+    color: #F28383;
+    margin-bottom: 10px;
+}
+
+.anocus-oscura .anocus-feedback.success {
+    color: #80d8ff;
+}
+
+.anocus-oscura .anocus-feedback.error {
+    color: #F28383;
+}
+
+/* Estilo de texto para el título y el cuerpo de los comentarios */
+.anocus-oscura .anocus-head h3 {
+    color: red;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 5px  var(--azul-electrico),
+        0 0 15px var(--azul-electrico),
+        0 0 30px var(--azul-electrico),
+        0 0 45px var(--azul-electrico);
+}
+
+/*.anocus-oscura .anocus-comment-body {
+    color: red;
+    font-size: 1.1em;
+    
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 5px  var(--azul-electrico),
+        0 0 15px var(--azul-electrico),
+        0 0 30px var(--azul-electrico),
+        0 0 45px var(--azul-electrico);
+}*/
+
+/* Efecto neón solo para el label del campo "Nombre" */
+.anocus-oscura .anocus-row label[for="nombre"] {
+    color: red;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 5px  var(--azul-electrico),
+        0 0 15px var(--azul-electrico),
+        0 0 30px var(--azul-electrico),
+        0 0 45px var(--azul-electrico);
+}
+
+/* Efecto neón solo para el label del campo "Comentario" */
+.anocus-oscura .anocus-row label[for="comentario"] {
+    color: red;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 5px  var(--azul-electrico),
+        0 0 15px var(--azul-electrico),
+        0 0 30px var(--azul-electrico),
+        0 0 45px var(--azul-electrico);
 }
