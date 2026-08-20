@@ -1690,9 +1690,6 @@ body {
         0 0 45px var(--azul-electrico);
 }
 
-/* Oculta el widget cuando muestra el mensaje de éxito */
-.anocus-turnstile .turnstile-widget[data-status="success"] {
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: opacity 0.3s ease;
+.anocus-turnstile:has(.turnstile-widget[data-status="success"]) {
+  display: none !important;
 }
