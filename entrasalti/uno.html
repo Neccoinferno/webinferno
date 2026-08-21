@@ -69,6 +69,7 @@
 <hr class="neon">
 
 <!--BLOQUE DE COMENTARIOS AQUÍ--> 
+    <div id="anocus-comments"></div>
 
     </article>
     
@@ -117,6 +118,21 @@
         <img src="../imagenes/firma.png" alt="Firma" class="footer-icono">
         </a>
     </footer>
+
+ <script src="../js/anocus.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Anocus.mount({
+      container: '#anocus-comments',
+      apiBase: 'https://anocus.palagrafias.workers.dev',
+      pathname: '/uno',
+      pageTitle: document.title,
+      turnstileSiteKey: '0x4AAAAAAES-Xrl2ucpgj9Mz',
+      lang: 'es',
+      theme: 'dark',
+    });
+  });
+</script>  
 
 </body>
 </html>
