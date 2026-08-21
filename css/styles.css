@@ -1693,3 +1693,70 @@ body {
 .anocus-turnstile:has(.turnstile-widget[data-status="success"]) {
   display: none !important;
 }
+
+.footer-legal {
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+
+.footer-legal a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: #fff;
+}
+
+/* Estilo para enlaces del footer (hereda los estilos del menú) */
+.footer-link {
+    text-decoration: none;
+    color: var(--azul-electrico) !important;
+    font-weight: 500;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: var(--azul-electrico);
+}
+
+/* Línea animada inferior en el hover */
+.footer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--azul-electrico);
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+.footer-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+        margin: 0; /* Elimina cualquier margen que el footer o el contenedor pudieran tener */
+    padding: 0; /* Elimina el relleno interno */
+}
+
+.footer-icono {
+    margin: 0; /* Elimina márgenes en la imagen de la firma */
+
+}
+
+.footer-link {
+    display: inline-block; /* Ocupa solo el ancho necesario */
+    margin: 0;
+    padding: 0; /* Elimina el padding que pueda tener la clase .footer-link */
+}

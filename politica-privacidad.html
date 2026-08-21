@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad — Infierno S.A.</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="imagenes/favicon.ico">
+</head>
+<body>
+
+    <!-- Cabecera (puedes copiarla de otra página) -->
+    <header class="barra-navegacion">
+        <!-- ... tu navegación ... -->
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="#" id="volver-dinamico" class="boton-neon">← Volver</a>
+        </div>
+    </header>
+
+    <hr class="neon">
+
+    <main class="contenedor-politica">
+        <h1>Política de Privacidad</h1>
+
+        <section>
+            <h2>Protección contra spam y abuso</h2>
+            <p>Para proteger esta bitácora contra comentarios no deseados y bots, utilizo Cloudflare Turnstile, un servicio de verificación de seguridad. Al enviar un comentario, se realiza una comprobación automática en segundo plano. En este proceso, Cloudflare puede recopilar datos técnicos de tu navegador, como la dirección IP, la versión del navegador y el sistema operativo, con el único fin de verificar que eres humano y distinguirte de un robot.</p>
+            <p>Estos datos se procesan bajo la <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Política de Privacidad de Turnstile</a> y son estrictamente necesarios para la seguridad del sitio. No se utilizan para publicidad, perfilado ni se comparten con terceros para esos fines.</p>
+            <p>Puedes consultar la política de privacidad completa de Turnstile aquí: <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Anexo de Privacidad de Turnstile</a>.</p>
+        </section>
+
+        <section>
+            <h2>Datos que almaceno</h2>
+            <p>Los únicos datos que almaceno son el nombre y el comentario que dejas voluntariamente en esta bitácora. Si deseas acceder, rectificar o eliminar esta información, puedes ponerte en contacto conmigo a través del <a href="contacto.html">formulario de contacto</a> y gestionaré tu petición.</p>
+        </section>
+    </main>
+
+    <hr class="neon">
+
+    <!-- Footer (copiado de otras páginas) -->
+    <footer>
+        <a href="#top">
+            <img src="imagenes/firma.png" alt="Firma" class="footer-icono">
+        </a>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const volverLink = document.getElementById('volver-dinamico');
+        // Si hay una página anterior en el historial, usa esa URL
+        if (document.referrer) {
+            volverLink.href = document.referrer;
+        } else {
+            // Si no hay página anterior, vuelve a oscura.html por defecto
+            volverLink.href = 'oscura.html';
+        }
+    });
+</script>
+
+</body>
+</html>
