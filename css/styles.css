@@ -1760,3 +1760,60 @@ body {
     margin: 0;
     padding: 0; /* Elimina el padding que pueda tener la clase .footer-link */
 }
+
+/* ==========================================
+   LICENCIA CC EN EL FOOTER
+   ========================================== */
+
+.footer-enlaces {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.separador-footer {
+    color: var(--texto-principal);
+    opacity: 0.5;
+}
+
+.licencia-cc {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--azul-electrico);
+    text-decoration: none;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+/* Subrayado animado */
+.licencia-cc::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--azul-electrico);
+    transition: width 0.3s ease;
+}
+
+.licencia-cc:hover::after {
+    width: 100%;
+}
+
+/* Iconos Creative Commons */
+.licencia-cc img {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: none !important;
+    max-height: none !important;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
