@@ -372,7 +372,20 @@
     });
 
     setupTurnstile();
-    loadComments();
+
+    // ✅ Esperar un breve momento antes de cargar los comentarios
+    // para asegurar que el Worker está listo
+    setTimeout(() => {
+      loadComments();
+    }, 500);
+
+    // ✅ Si la carga falla, reintentar después de 3 segundos
+    // Este es un mecanismo de respaldo para asegurar que los comentarios se carguen
+    setTimeout(() => {
+      if (state.comments.length === 0) {
+        loadComments();
+      }
+    }, 3000);
   }
 
   window.Anocus = {
