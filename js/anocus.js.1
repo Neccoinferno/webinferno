@@ -333,17 +333,11 @@
         state.provider = String(payload.provider || state.provider || '');
         state.thread = payload.thread;
         state.comments = state.comments.concat(payload.comment);
-
-        // ✅ Pequeño retraso de 1 segundo antes de recargar la lista de comentarios
-        // para dar tiempo a GitHub a procesar el guardado.
-        setTimeout(() => {
-          renderCommentsList(listNode, state.comments);
-          formNode.reset();
-          clearReplyTarget();
-          resetTurnstile();
-          setFeedback('Comentario publicado.', 'success');
-        }, 1000);
-
+        renderCommentsList(listNode, state.comments);
+        formNode.reset();
+        clearReplyTarget();
+        resetTurnstile();
+        setFeedback('Comentario publicado.', 'success');
       } catch (error) {
         setFeedback(error.message || 'No se pudo publicar el comentario.', 'error');
       }
