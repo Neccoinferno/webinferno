@@ -333,11 +333,17 @@
         state.provider = String(payload.provider || state.provider || '');
         state.thread = payload.thread;
         state.comments = state.comments.concat(payload.comment);
-        renderCommentsList(listNode, state.comments);
-        formNode.reset();
-        clearReplyTarget();
-        resetTurnstile();
-        setFeedback('Comentario publicado.', 'success');
+
+        // ✅ Pequeño retraso de 1 segundo antes de recargar la lista de comentarios
+        // para dar tiempo a GitHub a procesar el guardado.
+        setTimeout(() => {
+          renderCommentsList(listNode, state.comments);
+          formNode.reset();
+          clearReplyTarget();
+          resetTurnstile();
+          setFeedback('Comentario publicado.', 'success');
+        }, 1000);
+
       } catch (error) {
         setFeedback(error.message || 'No se pudo publicar el comentario.', 'error');
       }
@@ -366,7 +372,20 @@
     });
 
     setupTurnstile();
-    loadComments();
+
+    // ✅ Esperar un breve momento antes de cargar los comentarios
+    // para asegurar que el Worker está listo
+    setTimeout(() => {
+      loadComments();
+    }, 500);
+
+    // ✅ Si la carga falla, reintentar después de 3 segundos
+    // Este es un mecanismo de respaldo para asegurar que los comentarios se carguen
+    setTimeout(() => {
+      if (state.comments.length === 0) {
+        loadComments();
+      }
+    }, 3000);
   }
 
   window.Anocus = {

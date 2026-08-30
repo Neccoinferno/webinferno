@@ -231,7 +231,7 @@
       feedbackNode.className = 'anocus-feedback' + (type ? ` ${type}` : '');
     }
 
-    async function loadComments() {
+    /*async function loadComments() {
       try {
         setFeedback('Cargando comentarios...', 'info');
         const pathname = normalizePathname(opts.pathname);
@@ -248,7 +248,36 @@
       } catch (error) {
         setFeedback(error.message || 'No se pudieron cargar los comentarios.', 'error');
       }
+    }*/
+   async function loadComments(retryCount = 0) {
+  const maxRetries = 3;
+  const retryDelay = 3000; // 3 segundos entre intentos
+
+  try {
+    setFeedback('Cargando comentarios...', 'info');
+    const pathname = normalizePathname(opts.pathname);
+    const query = new URLSearchParams({ pathname });
+    const payload = await requestJson(`${opts.apiBase}/thread?${query.toString()}`, {
+      method: 'GET',
+      credentials: 'same-origin',
+    });
+    state.provider = String(payload.provider || '');
+    state.thread = payload.thread;
+    state.comments = payload.comments || [];
+    renderCommentsList(listNode, state.comments);
+    setFeedback('', '');
+  } catch (error) {
+    console.warn(`⚠️ Intento ${retryCount + 1}/${maxRetries} falló:`, error);
+    if (retryCount < maxRetries - 1) {
+      setFeedback(`Reintentando... (${retryCount + 1}/${maxRetries})`, 'info');
+      setTimeout(() => {
+        loadComments(retryCount + 1);
+      }, retryDelay);
+    } else {
+      setFeedback('No se pudieron cargar los comentarios. Por favor, recarga la página.', 'error');
     }
+  }
+}
 
     function resetTurnstile() {
       if (window.turnstile && state.turnstileWidgetId !== null) {
