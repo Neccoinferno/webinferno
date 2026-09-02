@@ -2,46 +2,120 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    
-    <title>PONER EL TÍTULO DEL ARTÍCULO</title> <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
+    <meta name="description" content="Entrada de la bitácora personal de Infierno S.A.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÍTULO DE ENTRADA</title>                               <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
 
     <link rel="stylesheet" href="../css/styles.css"> 
-    <link rel="icon" type="image/png" href="../imagenes/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../imagenes/favicon.ico">
 </head>
 <body class="pagina-entrada">
 
 <header class="barra-navegacion">
-    <a href="../index.html" class="sitio-identidad">
+    <a href="../oscura.html" class="sitio-identidad">
         <img src="../imagenes/logo.png" alt="Logo" class="sitio-logo">
     </a>
 
     <!-- Enlaces de navegación -->
     <nav class="sitio-menu">
-        <a href="../index.html">Inicio</a>
+        <!--<a href="../index.html">Inicio</a>-->
         <a href="../contacto.html">Contacto</a>
         <!--<a href="sobre-mi.html">Sobre mí</a>-->
     </nav>
 </header>
 
     <main>
-        <article>
+        <article class="entrada-reciente">
             <section>
-            <img src="../imagenes/PONER-IMAGEN.png" alt="DESCRIPCIÓN"> <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
-            </section>
-            <h1>PONER TÍTULO DEL ARTÍCULO</h1>    <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
-            <small>Publicado el  de  de 2026</small> <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
-            <p>ENTRADA PRINCIPAL A ESCRIBIR</p> <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
+            <img src="../imagenes/" alt="DESCRIPCIÓN DE IMAGEN">  <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
+            </section> 
+            
+            <h1>TÍTULO</h1>    <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
+            <small>Publicado en PONER MES de 2026</small> <!-- ¡¡ATENCIÓN HAY QUE HACER CAMBIOS!! -->
+
+                <p>TEXTO</p>
+               
+                <p>TEXTO</p>
+                
+                <p>TEXTO</p>
+                
+                <p>TEXTO</p>
+
+                <br>
             <img src="../imagenes/firma.png" alt="Firma" class="firma">
 
-            <!-- SECCIÓN DE COMENTARIOS -->
+            <hr class="neon">
 
+            <!-- SECCIÓN DE COMENTARIOS -->
+            <div id="anocus-comments" class="anocus-oscura"></div>
      
        </article>
     </main>
 
-    <!-- Tu footer aquí -->
-         <footer>
+    <!-- Pie de página inicial
+    <footer>
+        <a href="#top">
         <img src="../imagenes/firma.png" alt="Firma" class="footer-icono">
-    </footer>
+        </a>
+    </footer> -->
+
+    <footer>
+    <div class="footer-contenido">
+
+        <a href="#top">
+            <img src="../imagenes/firma.png" alt="Firma" class="footer-icono">
+        </a>
+
+        <div class="footer-enlaces">
+            <a href="../politica-privacidad.html" class="footer-link">
+                Política de Privacidad
+            </a>
+
+            <span class="separador-footer">·</span>
+
+            <a
+                href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+                class="licencia-cc"
+                rel="license"
+            >
+                Textos originales de Necco -
+                <img
+                    src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+                    alt="Creative Commons"
+                >
+                <img
+                    src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+                    alt="BY"
+                >
+                <img
+                    src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+                    alt="NC"
+                >
+                <img
+                    src="https://mirrors.creativecommons.org/presskit/icons/nd.svg"
+                    alt="ND"
+                >
+            </a>
+
+        </div>
+    </div>
+</footer>
+
+
+ <script src="../js/anocus.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Anocus.mount({
+      container: '#anocus-comments',
+      apiBase: 'https://anocus.palagrafias.workers.dev',
+      pathname: '/',                      <!--PONER NOMBRE DE ENTRADA-->
+      pageTitle: document.title,
+      turnstileSiteKey: '0x4AAAAAAES-Xrl2ucpgj9Mz',
+      lang: 'es',
+      theme: 'dark',
+    });
+  });
+</script>  
+
 </body>
 </html>
