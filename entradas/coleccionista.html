@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Entrada de la bitácora personal de Infierno S.A.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleccionista</title>                               
+
+    <link rel="stylesheet" href="../css/styles.css"> 
+    <link rel="icon" type="image/x-icon" href="../imagenes/favicon.ico">
+</head>
+<body class="pagina-entrada">
+
+<header class="barra-navegacion">
+    <a href="../oscura.html" class="sitio-identidad">
+        <img src="../imagenes/logo.png" alt="Logo" class="sitio-logo">
+    </a>
+
+    <!-- Enlaces de navegación -->
+    <nav class="sitio-menu">
+        <!--<a href="../index.html">Inicio</a>-->
+        <a href="../contacto.html">Contacto</a>
+        <!--<a href="sobre-mi.html">Sobre mí</a>-->
+    </nav>
+</header>
+
+    <main>
+        <article class="entrada-reciente">
+            <section>
+            <img src="../imagenes/coleccionista.jpg" alt="Niños mirando un frasco">  
+            </section> 
+            
+            <h1>Coleccionista</h1>    
+            <small>Publicado en octubre de 2026</small> 
+
+            <p>Por si volaba, no quitábamos los ojos del frasco donde la habíamos introducido. «Está muerta, le has pegado demasiado fuerte», 
+                repetía mi hermanita mientras acercaba cada vez más su cara al frasco. Si volaba, se la quedaría ella, la habíamos cazado en su habitación 
+                y eran nuestras normas. Si estaba muerta, me la quedaría yo y entraría a formar parte de mi colección. Estaba confundido; yo quería verla 
+                levantarse, era una criatura hermosa, con unas bellísimas alas de colores brillantes como nunca había visto. Pero por otro lado me gustaría 
+                que estuviese muerta; mi colección de mariposas ganaría mucho si añadiese esta hada.</p>
+
+                <br>
+            <img src="../imagenes/firma.png" alt="Firma" class="firma">
+
+            <hr class="neon">
+
+            <!-- SECCIÓN DE COMENTARIOS -->
+            <div id="anocus-comments" class="anocus-oscura"></div>
+     
+       </article>
+    </main>
+
+    <!-- Pie de página inicial
+    <footer>
+        <a href="#top">
+        <img src="../imagenes/firma.png" alt="Firma" class="footer-icono">
+        </a>
+    </footer> -->
+
+    <footer>
+    <div class="footer-contenido">
+
+        <a href="#top">
+            <img src="../imagenes/firma.png" alt="Firma" class="footer-icono">
+        </a>
+
+        <div class="footer-enlaces">
+            <a href="../politica-privacidad.html" class="footer-link">
+                Política de Privacidad
+            </a>
+
+            <span class="separador-footer">·</span>
+
+            <a
+                href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+                class="licencia-cc"
+                rel="license"
+            >
+                Textos originales de Necco -
+                <img
+                    src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+                    alt="Creative Commons"
+                >
+                <img
+                    src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+                    alt="BY"
+                >
+                <img
+                    src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+                    alt="NC"
+                >
+                <img
+                    src="https://mirrors.creativecommons.org/presskit/icons/nd.svg"
+                    alt="ND"
+                >
+            </a>
+
+        </div>
+    </div>
+</footer>
+
+
+ <script src="../js/anocus.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Anocus.mount({
+      container: '#anocus-comments',
+      apiBase: 'https://anocus.palagrafias.workers.dev',
+      pathname: 'coleccionista',                      
+      pageTitle: document.title,
+      turnstileSiteKey: '0x4AAAAAAES-Xrl2ucpgj9Mz',
+      lang: 'es',
+      theme: 'dark',
+    });
+  });
+</script>  
+
+</body>
+</html>
